@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <div class="container">
+        <div class="articles">
+            {% for article in articles %}
+
+                <div class="article">
+                    <h2 class="mt-0"><a href='/articles/{{article.slug}}' class = "text-dark">{{article.title}}</a></h2>
+                    <!--<p>{{article.snippet}}...</p>-->
+                    <p>{{article.body|slice:150}}...</p>
+                    <p>{{article.date}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body %}
