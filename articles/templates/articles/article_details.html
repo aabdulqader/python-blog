@@ -1,15 +1,15 @@
 {% extends "base.html "%} 
-{% block title %}Article_details{% endblock title %} 
+{% block title %}Article - {{article.title|slice:12}}{% endblock title %} 
 {% block body %}
     <div class = 'article_details'>
         <div class = 'article'>
-            <h1 class='my-5'>{{article.title}}</h1>
-            <div class="conainer">
+            <img class= 'mt-5' src="{{article.image.url}}" weight='900px' height='500px' alt="">
+            <h1 class='font-weight-bold my-5'>{{article.title}}</h1>
+            <div class="conainer text-light">
                 <p>{{article.body}}</p>
                 <p>{{article.date}}</p>
             </div>
-            
+            <button type="button" class="btn btn-text-light btn-link" ><a href="{% url 'home' %}">Back</a></button>
         </div>
-        <a class="btn btn-outline-info btn-sm" href="/articles">Back</a>
     </div>
 {% endblock body %}
